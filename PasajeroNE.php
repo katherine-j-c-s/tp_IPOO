@@ -4,7 +4,6 @@
  * como sillas de ruedas, asistencia para el embarque o desembarque, o comidas especiales para personas con alergias 
  * o restricciones alimentarias
 */
-include "Pasajero.php";
 class PasajeroNE extends Pasajero{
     private $sillaDeRuedas;
     private $asistencia;
@@ -17,6 +16,7 @@ class PasajeroNE extends Pasajero{
         $this -> asistencia = $asistencia;
     }
 
+    //METODOS GET
     public function getSillaDeRuedas(){
         return $this->sillaDeRuedas;
     }
@@ -27,6 +27,7 @@ class PasajeroNE extends Pasajero{
         return $this->asistencia;
     }
 
+    //METODOS SET
     public function setSillaDeRuedas($nuevosillaDeRuedas){
         $this->sillaDeRuedas = $nuevosillaDeRuedas;
     }
@@ -48,9 +49,8 @@ class PasajeroNE extends Pasajero{
     }
 
     public function __toString(){
-        $sillaRuedas=$this->getSillaDeRuedas() ? "si tiene" : "no tiene";
         $cadena = parent::__toString();
-        $cadena.="\nSilla de ruedas : " . $sillaRuedas
+        $cadena.="\nSilla de ruedas : " . $this->getSillaDeRuedas()
         . "\nComida especial tipo : " . $this->getComidasEspeciales()
         . "\nAsistenca para : " . $this->getAsistencia();
         return $cadena;

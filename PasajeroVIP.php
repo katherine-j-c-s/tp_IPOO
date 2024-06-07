@@ -2,7 +2,6 @@
 /**
  *La clase "PasajeroVIP" tiene como atributos adicionales el número de viajero frecuente y cantidad de millas de pasajero
 */
-include "Pasajero.php";
 class PasajeroVIP extends Pasajero{
     private $nroViajeFrecuente;
     private $cantMillas;
@@ -12,7 +11,7 @@ class PasajeroVIP extends Pasajero{
         $this -> nroViajeFrecuente = $nroViajeFrecuente;
         $this -> cantMillas = $cantMillas;
     }
-
+    //METODOS GET
     public function getNroViajeFrecuente(){
         return $this->nroViajeFrecuente;
     }
@@ -20,6 +19,7 @@ class PasajeroVIP extends Pasajero{
         return $this->cantMillas;
     }
 
+    //METODOS SET
     public function setNroViajeFrecuente($nuevoNroViajeFrecuente){
         $this->nroViajeFrecuente = $nuevoNroViajeFrecuente;
     }
@@ -32,14 +32,14 @@ class PasajeroVIP extends Pasajero{
         //300 millas se realiza un incremento del 30%.
         $porcentaje= 35;
         if($this->getCantMillas() > 300){
-            $porcentaje = 300; 
+            $porcentaje = 30; 
         }
         return $porcentaje;
     }
     public function __toString(){
         $cadena = parent::__toString();
         $cadena.="\nNumero Viaje Frecuente : " . $this->getNroViajeFrecuente()
-        . "\nCantidad de millas pasajero : " . $this->getCantMillas();
+        . "\nCantidad de millas : " . $this->getCantMillas();
         return $cadena;
         
     }

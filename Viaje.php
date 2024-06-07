@@ -4,8 +4,7 @@
 // El viaje ahora contiene una referencia a una colección de objetos de la clase Pasajero
 //  También se desea guardar la información de la persona responsable de realizar el viaje,
 // Modificar la clase viaje para almacenar el costo del viaje, la suma de los costos abonados por los pasajeros
-include "ResponsableV.php";
-include "Pasajero.php";
+
 Class Viaje {
     private $codigo;
     private $destino;
@@ -25,6 +24,7 @@ Class Viaje {
         $this->sumaDeCostosAbonadosPorPasajeros = $this->iniciarCostosAbonados();
     }
 
+    //METODOS GET
     public function getCodigo(){
         return $this->codigo;
     }
@@ -49,6 +49,7 @@ Class Viaje {
 
 
 
+    //METODOS SET
     public function setCodigo($value){
         $this->codigo = $value;
     }
@@ -93,8 +94,8 @@ Class Viaje {
 
     public function hayPasajesDisponibles(){
         $colPasajeros = $this->getColObjPasajeros();
-        $hayPasaje = count($colPasajeros) < $this->getCantidadMaximaDePasajeros();
-        return $hayPasaje;
+        $hayPasajero = count($colPasajeros) < $this->getCantidadMaximaDePasajeros();
+        return $hayPasajero;
     }
 
     public function agregarPasajero(Pasajero $pasajero){

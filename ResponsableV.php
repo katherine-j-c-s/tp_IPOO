@@ -14,6 +14,7 @@ Class ResponsableV {
         $this->apellido = $apellido;
     }
 
+    //METODOS GET
     public function getNombre(){
         return $this->nombre;
     }    
@@ -28,6 +29,7 @@ Class ResponsableV {
     }
 
 
+    //METODOS SET
     public function setNombre($value){
         $this->nombre = $value;
     }

@@ -21,6 +21,7 @@ Class Pasajero {
         $this->numeroDeTicket = $numeroDeTicket;
     }
 
+    //METODOS GET
     public function getNombre(){
         return $this->nombre;
     }
@@ -40,7 +41,7 @@ Class Pasajero {
         return $this->numeroDeTicket;
     }
     
-
+    //METODOS SET
     public function setNombre($value){
         $this->nombre = $value;
     }
@@ -62,8 +63,7 @@ Class Pasajero {
 
 
     public function darPorcentajeIncremento(){
-        // Por último, para los pasajeros comunes el porcentaje de incremento es del 10 %.
-        $porcentaje = 10;
+        $porcentaje = 0;
         return $porcentaje;
     }
 
